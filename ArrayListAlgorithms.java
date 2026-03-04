@@ -8,21 +8,41 @@ public class ArrayListAlgorithms {
    * 1) arraySize will always be >= 1
    * 2) Random numbers should be in the range 0 - 99 (inclusive)
    */
+   public int length = 0;
 
    public ArrayListAlgorithms(int arraySize) {
       // REQUIRED: initialize intArray to be of size arraySize
+      ArrayList<String> myArrayList = new ArrayList<String>();
+
    }
 
    public void populateArrayWithRandom() {
       // REQUIRED: populate intArray with random integers from 0 - 99
+      length =(int)Math.random() * 100;
+      for (int i = 0; i < length; i++) {
+         int arrayVal = (int)(Math.random() * 100);
+         intArray.add(arrayVal);
+      }
    }
 
    public void populateArrayWithSequential(int startNum) {
       // REQUIRED: populate intArray with sequential integers starting at startNum
+      for (int i = 0; i < length; i++) {
+         intArray.add(startNum);
+         startNum++;
+      }
    }
 
    public int findMax() {
       // REQUIRED: return the largest integer in intArray
+      int biggestNum = 0;
+      for (int i = 0; i < length; i++) {
+         if (intArray.get(i) > biggestNum) {
+            biggestNum = intArray.get(i);
+         }
+      }
+      
+   return biggestNum;
    }
 
    public boolean hasDuplicates() {
